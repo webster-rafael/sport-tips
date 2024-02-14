@@ -29,9 +29,9 @@ module.exports = {
       },
 
       backgroundImage: {
-        'Banner': "url('../public/image/Banner.png')",
-        'Banner-Players': "url('../public/image/Banner-Players.png')",
-        'Banner-Mobile': "url('../public/image/chuteiras3.jpg')",
+        'Banner': "url('./image/Banner.png')",
+        'Banner-Players': "url('./image/Banner-Players.png')",
+        'Banner-Mobile': "url('./image/chuteiras3.jpg')",
       },
     },
   },

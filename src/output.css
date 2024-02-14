@@ -608,45 +608,12 @@ video {
   top: 20px;
 }
 
-.left-0 {
-  left: 0px;
-}
-
-.top-\[-400px\] {
-  top: -400px;
-}
-
-.top-\[80px\] {
-  top: 80px;
-}
-
-.top-\[70px\] {
-  top: 70px;
-}
-
-.top-\[60px\] {
-  top: 60px;
-}
-
 .z-10 {
   z-index: 10;
 }
 
-.z-\[-1\] {
-  z-index: -1;
-}
-
 .z-auto {
   z-index: auto;
-}
-
-.m-auto {
-  margin: auto;
-}
-
-.my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 .mx-2 {
@@ -654,9 +621,9 @@ video {
   margin-right: 0.5rem;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .-mt-16 {
@@ -725,10 +692,6 @@ video {
 
 .grid {
   display: grid;
-}
-
-.hidden {
-  display: none;
 }
 
 .aspect-square {
@@ -809,6 +772,10 @@ video {
   width: 83.333333%;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .w-full {
   width: 100%;
 }
@@ -816,10 +783,6 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-auto {
-  width: auto;
 }
 
 .min-w-16 {
@@ -1043,11 +1006,11 @@ video {
 }
 
 .bg-Banner {
-  background-image: url('../public/image/Banner.png');
+  background-image: url('./image/Banner.png');
 }
 
 .bg-Banner-Players {
-  background-image: url('../public/image/Banner-Players.png');
+  background-image: url('./image/Banner-Players.png');
 }
 
 .bg-gradient-to-r {
@@ -1151,6 +1114,11 @@ video {
   padding-right: 4px;
 }
 
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1191,11 +1159,6 @@ video {
   padding-bottom: 1rem;
 }
 
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -1206,6 +1169,10 @@ video {
 
 .pb-6 {
   padding-bottom: 1.5rem;
+}
+
+.pl-0 {
+  padding-left: 0px;
 }
 
 .pl-4 {
@@ -1222,14 +1189,6 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.pl-7 {
-  padding-left: 1.75rem;
-}
-
-.pl-0 {
-  padding-left: 0px;
 }
 
 .text-left {
@@ -1356,6 +1315,10 @@ video {
   opacity: 0;
 }
 
+.opacity-100 {
+  opacity: 1;
+}
+
 .opacity-60 {
   opacity: 0.6;
 }
@@ -1366,10 +1329,6 @@ video {
 
 .opacity-80 {
   opacity: 0.8;
-}
-
-.opacity-100 {
-  opacity: 1;
 }
 
 .shadow-lg {
@@ -1405,6 +1364,12 @@ video {
   outline-offset: 2px;
 }
 
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-opacity {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1413,12 +1378,6 @@ video {
 
 .transition-transform {
   transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-all {
-  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1477,7 +1436,7 @@ video {
 .special::-webkit-scrollbar-thumb {
   border-radius: 4px;
   /* Raio da borda do polegar */
-  /* Defina aqui a largura do polegar */
+  /*  */
   width: 5px;
 }
 
@@ -1689,10 +1648,6 @@ video {
     top: 80px;
   }
 
-  .mobile\:z-auto {
-    z-index: auto;
-  }
-
   .mobile\:z-\[-1\] {
     z-index: -1;
   }
@@ -1716,14 +1671,6 @@ video {
 
   .mobile\:mt-4 {
     margin-top: 1rem;
-  }
-
-  .mobile\:block {
-    display: block;
-  }
-
-  .mobile\:flex {
-    display: flex;
   }
 
   .mobile\:grid {
@@ -1758,16 +1705,8 @@ video {
     flex-direction: column;
   }
 
-  .mobile\:items-center {
-    align-items: center;
-  }
-
   .mobile\:justify-center {
     justify-content: center;
-  }
-
-  .mobile\:justify-between {
-    justify-content: space-between;
   }
 
   .mobile\:gap-1 {
@@ -1779,7 +1718,7 @@ video {
   }
 
   .mobile\:bg-Banner-Mobile {
-    background-image: url('../public/image/chuteiras3.jpg');
+    background-image: url('./image/chuteiras3.jpg');
   }
 
   .mobile\:bg-bottom {
@@ -1849,10 +1788,6 @@ video {
 }
 
 @media (min-width: 1000px) and (max-width: 1400px) {
-  .desktop\:flex {
-    display: flex;
-  }
-
   .desktop\:hidden {
     display: none;
   }
