@@ -28,7 +28,7 @@
 /* Estilizando o "polegar" (a parte móvel) da barra de rolagem horizontal */
 .special::-webkit-scrollbar-thumb {
     border-radius: 4px; /* Raio da borda do polegar */
-    /* Defina aqui a largura do polegar */
+    /*  */
     width: 5px;
     
 }
