@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+    width: 12px; /* Largura do scrollbar */
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 106, 255); /* Cor da thumb */
+  }
+
+  .special {
+    display: flex;
+    flex-wrap: nowrap; /* Impede a quebra para a próxima linha */
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .special > li {
+    flex: 0 0 auto; /* Impede que os itens se expandam */
+    margin-right: 10px; /* Espaçamento entre os itens */
+    
+  }
+  .special::-webkit-scrollbar-button { width: calc(25% - 80px);} /* Largura da barra de rolagem */
+
+
+/* Estilizando o "polegar" (a parte móvel) da barra de rolagem horizontal */
+.special::-webkit-scrollbar-thumb {
+    border-radius: 4px; /* Raio da borda do polegar */
+    /* Defina aqui a largura do polegar */
+    width: 5px;
+    
+}
+.special::-webkit-scrollbar-track {
+  background-color: black;
+  
+}
+
+.open 
+{
+  display: block;
+}
+
+
+

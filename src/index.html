@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/src/output.css" rel="stylesheet">
+
+    <!-- -------- Carrosel Link/Script --------- -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.1.2/css/ionicons.min.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- ------------- Fontes ----------------- -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Josefin+Sans:wght@300;500;600;700&family=Montserrat:wght@300;500;700&family=Roboto:ital,wght@0,300;0,500;1,700&display=swap" rel="stylesheet">
+
+<title>Document</title>
+</head>
+<body class='h-screen bg-slate-900 simplebar'>
+    <header class='fixed w-full flex justify-between bg-zinc-950 text-white z-10 font-robo px-4 mobile:px-2'>
+        <div class='flex items-center gap-1 hover:transition-transform transform hover:scale-110'>
+            <img class='size-16 rounded-full' src="../public/image/Logo-Fundo.png" alt="">
+            <p class='font-bold'>SPORT <span class='text-blue-500'>TIPS</span></p>
+        </div>
+        <nav class='flex justify-center items-center mobile:hidden'>
+            <ul class="flex gap-4">
+                <li>
+                    <a href="#" class="nav-link hover:border-b-2 hover:border-blue-500 hover:text-blue-100">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link hover:border-b-2 hover:border-blue-500 hover:text-blue-100">Sobre</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link hover:border-b-2 hover:border-blue-500 hover:text-blue-100">Products</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link hover:border-b-2 hover:border-blue-500 hover:text-blue-100">Loja</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link hover:border-b-2 hover:border-blue-500 hover:text-blue-100">Contato</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- --------------- menu mobile --------------- -->
+
+        <div class='flex flex-1 justify-end desktop:hidden'>
+          <span class="text-3xl cursor-pointer mx-2 md:hidden block my-auto">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+          </span>
+        </div>
+
+        <!-- -------------- fim menu mobile -------------- -->
+        
+        <div class='flex items-center'>
+            <ul id='lista' class="flex items-center mobile:z-[-1] z-auto static mobile:absolute mobile:w-full mobile:left-0 w-auto py-0 mobile:py-4 pl-0 mobile:pl-7 opacity-100 mobile:opacity-0 mobile:top-[-400px] transition-all ease-in duration-500 gap-4">
+                <li class='flex'>
+                  <button class="flex items-center gap-1 hover:transition-transform transform hover:scale-110">
+                    <ion-icon class='text-blue-600' name="search-outline" aria-hidden="true"></ion-icon>
+      
+                    <span class="">Procurar</span>
+                  </button>
+                </li>
+      
+                <li>
+                  <button class="flex items-center gap-1 hover:transition-transform transform hover:scale-110">
+                    <ion-icon class='text-red-700 group-hover/fav:transition-transform transform hover:scale-110' name="heart-outline" aria-hidden="true"></ion-icon>
+      
+                    <span class="nav-action-text group/fav hover:transition-transform transform hover:scale-110">Favoritos</span>
+      
+                    <data class="text-xs rounded-full px-[4px] absolute z-1 -top-1 right-[-0.7rem] bg-red-600" value="5" aria-hidden="true">5</data>
+                  </button>
+                </li>
+      
+                <li>
+                  <button class="flex items-center gap-1 hover:transition-transform transform hover:scale-110">
+                    <ion-icon class='text-yellow-300' name="bag-outline" aria-hidden="true"></ion-icon>
+                    Carrinho
+                  </button>
+                </li>
+      
+              </ul>
+        </div>
+
+        <!-- <div class='desktop:hidden w-full flex mobile:hidden flex-col mobile:text-center' id='mobile-menu'>
+          <ul class="block gap-4 w-full h-full">
+            <li class='flex'>
+              <button class="flex items-center gap-1 hover:transition-transform transform hover:scale-110">
+                <ion-icon class='text-blue-600' name="search-outline" aria-hidden="true"></ion-icon>
+  
+                <span class="">Procurar</span>
+              </button>
+            </li>
+  
+            <li>
+              <button class="flex items-center gap-1 hover:transition-transform transform hover:scale-110">
+                <ion-icon class='text-red-700 group-hover/fav:transition-transform transform hover:scale-110' name="heart-outline" aria-hidden="true"></ion-icon>
+  
+                <span class="nav-action-text group/fav hover:transition-transform transform hover:scale-110">Favoritos</span>
+  
+                <data class="text-xs rounded-full px-[4px] absolute z-1 -top-1 right-[-0.7rem] bg-red-600" value="5" aria-hidden="true">5</data>
+              </button>
+            </li>
+  
+            <li>
+              <button class="flex items-center gap-1 hover:transition-transform transform hover:scale-110">
+                <ion-icon class='text-yellow-300' name="bag-outline" aria-hidden="true"></ion-icon>
+                Carrinho
+              </button>
+            </li>
+  
+          </ul>
+        </div> -->
+    </header>
+
+    <main class='font-robo'>
+        <section class='h-screen bg-Banner bg-cover bg-center mobile:bg-Banner-Mobile'>
+            <div class="max-w-[440px] absolute top-48 left-32 text-left text-black flex flex-col justify-center mobile:left-0 mobile:px-4">
+
+                <h2 class="text-5xl font-mont mobile:text-white">
+                  New Summer <strong class='flex flex-col pt-2 text-blue-600 text-4xl font-robo'>Coleção de Chuteiras</strong>
+                </h2>
+      
+                <p class="text-lg opacity-80 leading-6 pt-5 mobile:text-white">
+                    Combine excelência e inovação para elevar o seu desempenho no futebol. Com designs exclusivos e tecnologia de ponta, garantimos agilidade, tração e conforto incomparáveis.
+                </p>
+      
+                <button class="bg-gradient-to-r from-blue-500 to-blue-700 w-36 py-2 mt-6 flex justify-center gap-1 items-center rounded-md transition-transform transform hover:scale-110">
+                  <span class='mobile:text-white'>Compre Agora</span>
+      
+                  <ion-icon class='mobile:text-white' name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </button>
+      
+              </div>
+        </section>
+
+        <section class="h-screen px-4 pt-10 font-inter bg-Banner-Players bg-no-repeat bg-top mobile:h-full">
+            <div class="w-full h-full flex items-center justify-center">
+    
+              <ul class="w-full grid grid-cols-3 gap-4 mobile:grid-cols-1">
+    
+                <li>
+                  <div class="h-[360px] flex justify-between flex-col text-center pt-10 pb-6" style="background-image: url('../public/image/collection-1.jpg')">
+                    <h3 class="text-2xl font-semibold font-jose">Coleção Masculina</h3>
+    
+                    <a href="#" class="flex justify-center items-center">
+                      <div class='flex justify-center items-center gap-1 border p-2 border-black hover:bg-lime-500 transition-transform transform hover:scale-110'>
+                          <span class='font-robo'>Explorar Mais</span>
+                          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="h-[360px] flex justify-between flex-col text-center pt-10 pb-6" style="background-image: url('../public/image/collection-2.jpg')">
+                    <h3 class="text-2xl font-semibold font-jose">Women Collections</h3>
+    
+                    <a href="#" class="flex justify-center items-center">
+                        <div class='flex justify-center items-center gap-1 border p-2 border-black hover:bg-pink-400 transition-transform transform hover:scale-110'>
+                            <span class='font-robo'>Explorar Mais</span>
+                            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                        </div>
+                      </a>
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="h-[360px] flex justify-between flex-col text-center pt-10 pb-6" style="background-image: url('../public/image/collection-3.jpg')">
+                    <h3 class="text-2xl font-semibold font-jose">Sports Collections</h3>
+    
+                    <a href="#" class="flex justify-center items-center">
+                        <div class='flex justify-center items-center gap-1 border p-2 border-black hover:bg-pink-200 transition-transform transform hover:scale-110'>
+                            <span class='font-robo'>Explorar Mais</span>
+                            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                        </div>
+                      </a>
+                  </div>
+                </li>
+    
+              </ul>
+    
+            </div>
+
+            <div class='w-full text-center items-center text-white -mt-16 flex justify-center gap-5 mobile:h-full mobile:mt-0 mobile:py-4'>
+                <ion-icon class='text-xl transform hover:scale-150 transition-transform duration-300' name="football-outline"></ion-icon>
+                <ion-icon class='text-xl transform hover:scale-150 transition-transform duration-300' name="basketball"></ion-icon>
+                <ion-icon class='text-xl transform hover:scale-150 transition-transform duration-300' name="tennisball"></ion-icon>
+                <ion-icon class='text-xl transform hover:scale-150 transition-transform duration-300' name="american-football"></ion-icon>
+                <ion-icon class='text-xl transform hover:scale-150 transition-transform duration-300' name="baseball"></ion-icon>
+            </div>
+          </section>
+
+<!-- ----------------- Produtos ---------------------- -->
+
+<section class="h-full px-4 text-white pt-10 font-roboto">
+    <div class="flex w-full flex-col justify-center text-center">
+
+      <h2 class="text-4xl py-4 font-jose">Mais Vendidos</h2>
+
+      <ul class="flex gap-5 justify-center py-3 mobile:grid mobile:grid-cols-6 mobile:gap-2">
+
+        <li class='bg-slate-800 px-4 rounded-full focus:bg-red-700 hover:bg-red-600 mobile:px-4 flex items-center text-center justify-center'>
+          <button class="filter-btn  active">All</button>
+        </li>
+
+        <li class='bg-slate-800 px-4 rounded-full focus:bg-red-700 hover:bg-red-600 mobile:px-4 flex items-center text-center justify-center'>
+          <button class="filter-btn">Nike</button>
+        </li>
+
+        <li class='bg-slate-800 px-4 rounded-full focus:bg-red-700 hover:bg-red-600 mobile:px-4 flex items-center text-center justify-center'>
+          <button class="filter-btn">Adidas</button>
+        </li>
+
+        <li class='bg-slate-800 px-4 rounded-full focus:bg-red-700 hover:bg-red-600 mobile:px-4 flex items-center text-center justify-center'>
+          <button class="filter-btn">Puma</button>
+        </li>
+
+        <li class='bg-slate-800 px-4 rounded-full focus:bg-red-700 hover:bg-red-600 mobile:px-4 flex items-center text-center justify-center'>
+          <button class="filter-btn">Bata</button>
+        </li>
+
+        <li class='bg-slate-800 px-4 rounded-full focus:bg-red-700 hover:bg-red-600 mobile:px-4 flex items-center text-center justify-center'>
+          <button class="filter-btn">Apex</button>
+        </li>
+
+      </ul>
+
+      <ul class="grid grid-cols-4 gap-4 py-4 autoplay2">
+
+        <li class="product-item group px-4" id='lista-1'>
+          <div class="" tabindex="0">
+
+            <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
+              <img class='transition-transform transform hover:scale-110 mobile:w-full' src="../public/image/product-1.jpg" width="312" height="350" loading="lazy"
+                alt="Running Sneaker Shoes" class="object-contain object-center">
+
+              <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
+
+              <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+
+                <li class="relative group/item flex">
+                  <button class="bg-blue-500 rounded-full size-8 flex justify-center items-center text-white hover:bg-blue-800" aria-labelledby="card-label-1">
+                    <ion-icon class='' name="cart-outline"></ion-icon>
+                  </button>
+
+                  <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                </li>
+
+                <li class="relative group/item flex">
+                  <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+
+                  <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao favoritos</div>
+                </li>
+
+                <li class="relative group/item flex">
+                  <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center  text-white" aria-labelledby="card-label-3">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+
+                  <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                </li>
+
+                <li class="relative group/item flex">
+                  <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+
+                  <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Comparar</div>
+                </li>
+
+              </ul>
+            </figure>
+
+            <div class="w-full bg-slate-950 shadow-lg shadow-black">
+
+              <div class="">
+                <a href="#" class="font-robo opacity-60 text-sm">Masculino</a> /
+                <a href="#" class="font-robo opacity-60 text-sm">Feminino</a>
+              </div>
+
+              <h3 class="h3 card-title py-1">
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Running Sneaker Shoes
+                </button>
+              </h3>
+
+              <div class='pt-2'>
+                  <data class="text-yellow-500" value="180.85">R$180.85</data>
+              </div>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="product-item group px-4" id='lista-1'>
+            <div class="" tabindex="0">
+  
+              <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
+                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="../public/image/product-2.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes" class="object-contain object-center">
+  
+                <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
+  
+                <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                      <ion-icon class='' name="cart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao favoritos</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Comparar</div>
+                  </li>
+  
+                </ul>
+              </figure>
+
+            <div class="w-full bg-slate-950 shadow-lg shadow-black">
+
+                <div class="card-cat">
+                    <a href="#" class="font-robo opacity-60 text-sm">Masculino</a> /
+                    <a href="#" class="font-robo opacity-60 text-sm">Sports</a>
+                </div>
+
+              <h3 class="py-1">
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Leather Mens Slipper
+                </button>
+                <a href="#"></a>
+              </h3>
+
+              <div class='pt-2'>
+                  <data class="text-yellow-500" value="190.85">$190.85</data>
+              </div>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="product-item group px-4" id='lista-1'>
+            <div class="" tabindex="0">
+  
+              <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
+                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="../public/image/product-3.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes" class="object-contain object-center">
+  
+                <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
+  
+                <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                      <ion-icon class='' name="cart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao favoritos</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Comparar</div>
+                  </li>
+  
+                </ul>
+              </figure>
+
+            <div class="w-full bg-slate-950 shadow-lg shadow-black">
+
+                <div class="card-cat">
+                    <a href="#" class="font-robo opacity-60 text-sm">Masculino</a> /
+                    <a href="#" class="font-robo opacity-60 text-sm">Feminino</a>
+                </div>
+
+              <h3 class="py-1">
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Running Sneaker Shoes
+                </button>
+              </h3>
+
+              <div class='pt-2'>
+                  <data class="text-yellow-500" value="160.85">$160.85</data>
+              </div>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="product-item group px-4" id='lista-1'>
+            <div class="" tabindex="0">
+  
+              <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
+                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="../public/image/product-4.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes" class="object-contain object-center">
+  
+                <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
+  
+                <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                      <ion-icon class='' name="cart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao favoritos</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Comparar</div>
+                  </li>
+  
+                </ul>
+              </figure>
+
+            <div class="w-full bg-slate-950 shadow-lg shadow-black">
+
+                <div class="card-cat">
+                    <a href="#" class="font-robo opacity-60 text-sm">Masculino</a> /
+                    <a href="#" class="font-robo opacity-60 text-sm">Sports</a>
+                </div>
+
+              <h3 class="py-1">
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800'>Air Jordan 7 Retro</button>
+              </h3>
+
+              <div class='pt-2'>
+                  <data class="text-yellow-500" value="170.85">R$170.85 <del>R$200.21</del>
+                  </data>
+              </div>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="product-item group px-4 " id='lista-1'>
+            <div class="" tabindex="0">
+  
+              <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
+                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="../public/image/product-5.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes" class="object-contain object-center">
+  
+                <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
+  
+                <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                      <ion-icon class='' name="cart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao favoritos</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Comparar</div>
+                  </li>
+  
+                </ul>
+              </figure>
+
+            <div class="w-full bg-slate-950 shadow-lg shadow-black">
+
+                <div class="card-cat">
+                    <a href="#" class="font-robo opacity-60 text-sm">Masculino</a> /
+                    <a href="#" class="font-robo opacity-60 text-sm">Feminino</a>
+                </div>
+              <h3 class="py-1">
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Running Sneaker Shoes
+                </button>
+              </h3>
+
+              <div class='pt-2'>
+                  <data class="text-yellow-500" value="120.85">R$120.85</data>
+              </div>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="product-item group px-4" id='lista-1'>
+            <div class="" tabindex="0">
+  
+              <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
+                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="../public/image/product-6.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes" class="object-contain object-center">
+  
+                <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
+  
+                <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                      <ion-icon class='' name="cart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao favoritos</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Comparar</div>
+                  </li>
+  
+                </ul>
+              </figure>
+
+            <div class="w-full bg-slate-950 shadow-lg shadow-black">
+
+                <div class="card-cat">
+                    <a href="#" class="font-robo opacity-60 text-sm">Masculino</a> /
+                    <a href="#" class="font-robo opacity-60 text-sm">Feminino</a>
+                </div>
+
+              <h3 class="py-1">
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Adidas Sneakers Shoes
+                </button>
+              </h3>
+
+              <div class='pt-2'>
+                  <data class="text-yellow-500 value="100.85">$100.85</data>
+              </div>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="product-item group px-4" id='lista-1'>
+            <div class="" tabindex="0">
+  
+              <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
+                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="../public/image/product-7.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes" class="object-contain object-center">
+  
+                <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
+  
+                <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                      <ion-icon class='' name="cart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao favoritos</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Comparar</div>
+                  </li>
+  
+                </ul>
+              </figure>
+
+            <div class="w-full bg-slate-950 shadow-lg shadow-black">
+
+                <div class="card-cat">
+                    <a href="#" class="font-robo opacity-60 text-sm">Masculino</a> /
+                    <a href="#" class="font-robo opacity-60 text-sm">Feminino</a>
+                </div>
+
+              <h3 class="py-1">
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Nike Basketball shoes
+                </button>
+              </h3>
+
+              <div class='pt-2'>
+                  <data class="text-yellow-500" value="120.85">$120.85</data>
+              </div>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="product-item group px-4" id='lista-1'>
+            <div class="" tabindex="0">
+  
+              <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
+                <img class='transition-transform hover:scale-110 mobile:w-full' src="../public/image/product-8.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes" class="object-contain object-center">
+  
+                <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
+  
+                <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                      <ion-icon class='' name="cart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao favoritos</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                  </li>
+  
+                  <li class="relative group/item flex">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+  
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Comparar</div>
+                  </li>
+  
+                </ul>
+              </figure>
+
+            <div class="w-full bg-slate-950 shadow-lg shadow-black">
+
+                <div class="card-cat">
+                    <a href="#" class="font-robo opacity-60 text-sm">Masculino</a> /
+                    <a href="#" class="font-robo opacity-60 text-sm">Feminino</a>
+                </div>
+
+              <h3 class="py-1">
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Simple Fabric Shoe
+                </button>
+              </h3>
+
+              <div class='pt-2'>
+                  <data class="text-yellow-500" value="100.85">$100.85</data>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+        <!-- <------------------ Banner -------------------->
+
+        <section class="h-screen px-4 bg-gradient-to-r from-blue-950 to-slate-900 mobile:py-10">
+          <div class="h-full bg-Banner-Players bg-no-repeat bg-top flex items-center justify-between mobile:h-screen">
+  
+            <ul class="grid grid-cols-2 gap-10 w-full mobile:grid-cols-1">
+  
+              <li class='w-full'>
+                <div class="w-full rounded-lg shadow-xl shadow-black bg-no-repeat bg-cover bg-center text-center py-20 text-white px-5 mobile:py-8" style="background-image: url('../public/image/chuteira.webp')">
+                  <p class="mb-4 text-blue-500 ">Chuteiras Nike</p>
+  
+                  <h3 class="text-inherit leading-6 py-4 text-4xl mobile:text-3xl">Desconto de Verão 50%</h3>
+  
+                  <div class='mt-10 transition-transform transform hover:scale-110'>
+                    <a href="#" class="w-32 py-2 px-4 rounded-md bg-gradient-to-r from-blue-500 to-blue-800 hover:from-pink-500 hover:to-blue-500 hover:bg-blue-800">
+                      <span>Compre Agora</span>
+                      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+  
+              <li class='w-full'>
+                <div class="w-full rounded-lg shadow-xl shadow-black bg-no-repeat bg-cover bg-bottom text-center py-20 text-white px-5 mobile:py-8" style="background-image: url('../public/image/chuteiras3.jpg')">
+                  <p class="mb-4 text-blue-500">Nike Shoes</p>
+  
+                  <h3 class="text-inherit leading-6 py-4 text-4xl mobile:text-2xl">Faz você se manter Esportivo</h3>
+  
+                  <div class='mt-10 transition-transform transform hover:scale-110'>
+                    <a href="#" class="w-32 py-2 px-4 rounded-md bg-gradient-to-r from-blue-500 to-blue-800 hover:from-pink-500 hover:to-blue-500 hover:bg-blue-800 ">
+                      <span class=''>Compre Agora</span>
+                      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+  
+            </ul>
+  
+          </div>
+        </section>
+
+        <!-- ------------- Especial ------------------ -->
+
+      <section class="h-screen pt-10 text-white pl-4 bg-black mobile:px-4">
+        <div class="flex justify-between mobile:flex-col mobile:h-full">
+
+          <div class="h-[500px] w-1/3 bg-no-repeat bg-cover bg-center py-12 flex flex-col justify-between items-center shadow-md shadow-black hover:shadow-blue-700 bg-sky-950 rounded-md mobile:h-full mobile:w-full mobile:mb-4" style="background-image: url('../public/image/special-banner-removebg.png')">
+            <h2 class="flex items-center gap-5 text-white text-xl mobile:mt-4">New Trend Edition</h2>
+
+            <a href="#" class="flex justify-center items-center gap-1 p-2 bg-gradient-to-r from-red-700 to-sky-900 hover:from-blue-500 hover:to-blue-800 hover:bg-blue-800 rounded-md transition-transform transform hover:scale-110">
+              <span class='text-white '>Explorar Mais</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+
+          <div class="flex flex-col overflow-x-auto pb-5 text-center">
+
+            <h2 class="pb-3 mobile:w-full">
+              <span class="text-4xl font-jose mobile:w-full">Nike Special</span>
+
+              <span class="w-full h-px mobile:hidden"></span>
+            </h2>
+
+            <ul class="special grid grid-cols-3 overflow-auto pb-5 mobile:hidden">
+
+              <li class="flex group px-4">
+                <div class="mobile:h-full" tabindex="0">
+
+                  <figure class="relative bg-blue-600 overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3">
+                    <img src="../public/image/product-1.jpg" width="312" height="350" loading="lazy"
+                      alt="Running Sneaker Shoes" class="transition-transform transform hover:scale-110">
+
+                    <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
+
+                    <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                          <ion-icon name="cart-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao Carrinho</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                          <ion-icon name="heart-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao Favorito</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                          <ion-icon name="repeat-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Comparar</div>
+                      </li>
+
+                    </ul>
+                  </figure>
+
+                  <div class="pb-5">
+
+                    <div class="card-cat">
+                      <a href="#" class="card-cat-link">Homem</a> /
+                      <a href="#" class="card-cat-link">Mulher</a>
+                    </div>
+
+                    <h3 class="h3 card-title">
+                      <a href="#">Running Sneaker Shoes</a>
+                    </h3>
+
+                    <data class="card-price" value="180.85">R$180.85</data>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="flex group px-4">
+                <div class="product-card" tabindex="0">
+
+                  <figure class="relative bg-blue-600 overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3">
+                    <img src="../public/image/product-2.jpg" width="312" height="350" loading="lazy"
+                      alt="Leather Mens Slipper" class="transition-transform transform hover:scale-110">
+
+                    <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                          <ion-icon name="cart-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao Carrinho</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                          <ion-icon name="heart-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao Favorito</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                          <ion-icon name="repeat-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Compare</div>
+                      </li>
+
+                    </ul>
+                  </figure>
+
+                  <div class="card-content">
+
+                    <div class="card-cat">
+                      <a href="#" class="card-cat-link">Men</a> /
+                      <a href="#" class="card-cat-link">Sports</a>
+                    </div>
+
+                    <h3 class="h3 card-title">
+                      <a href="#">Leather Mens Slipper</a>
+                    </h3>
+
+                    <data class="card-price" value="190.85">R$190.85</data>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="flex group px-4">
+                <div class="product-card" tabindex="0">
+
+                  <figure class="relative bg-blue-600 overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3">
+                    <img src="../public/image/product-3.jpg" width="312" height="350" loading="lazy"
+                      alt="Simple Fabric Shoe" class="transition-transform transform hover:scale-110">
+
+                    <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
+
+                    <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                          <ion-icon name="cart-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao Carrinho</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                          <ion-icon name="heart-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao Favorito</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                          <ion-icon name="repeat-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Compare</div>
+                      </li>
+
+                    </ul>
+                  </figure>
+
+                  <div class="card-content">
+
+                    <div class="card-cat">
+                      <a href="#" class="card-cat-link">Homem</a> /
+                      <a href="#" class="card-cat-link">Mulher</a>
+                    </div>
+
+                    <h3 class="h3 card-title">
+                      <a href="#">Simple Fabric Shoe</a>
+                    </h3>
+
+                    <data class="card-price" value="160.85">R$160.85</data>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="flex group px-4">
+                <div class="product-card" tabindex="0">
+
+                  <figure class="relative bg-blue-600 overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3">
+                    <img src="../public/image/product-4.jpg" width="312" height="350" loading="lazy"
+                      alt="Air Jordan 7 Retro " class="transition-transform transform hover:scale-110">
+
+                    <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl"> -25%</div>
+
+                    <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                          <ion-icon name="cart-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao Carrinho</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                          <ion-icon name="heart-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-2">Add ao Favorito</div>
+                      </li>
+
+                      <li class="relative group/item flex">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-3">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-3">Olhar</div>
+                      </li>
+
+                      <li class="card-action-item">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-4">
+                          <ion-icon name="repeat-outline"></ion-icon>
+                        </button>
+
+                        <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Compare</div>
+                      </li>
+
+                    </ul>
+                  </figure>
+
+                  <div class="card-content">
+
+                    <div class="card-cat">
+                      <a href="#" class="card-cat-link">Men</a> /
+                      <a href="#" class="card-cat-link">Sports</a>
+                    </div>
+
+                    <h3 class="h3 card-title">
+                      <a href="#">Air Jordan 7 Retro </a>
+                    </h3>
+
+                    <data class="card-price" value="170.85">R$170.85 <del>$200.21</del></data>
+
+                  </div>
+
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="h-2/4 w-full mt-20">
+        <div class="flex justify-center text-white">
+
+          <ul class="flex justify-center flex-wrap gap-12 px-3 w-full font-jose mobile:grid grid-cols-1">
+
+            <li class="w-1/4 mobile:w-full">
+              <div class="flex items-center gap-4">
+
+                <div class="bg-white min-w-16 h-16 rounded-full grid place-items-center">
+                  <img class='w-3/5 mobile:1/5' src="../public/image/service-1.png" width="53" height="28" loading="lazy" alt="Service icon">
+                </div>
+
+                <div>
+                  <h3 class="text-3xl flex mobile:text-2xl">Entrega Grátis</h3>
+
+                  <p class="card-text">
+                    Todos Pedidos acima de <span class='text-red-600'>$150</span>
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="w-1/4 mobile:w-full">
+              <div class="flex items-center gap-4">
+
+                <div class="bg-white min-w-16 h-16 rounded-full grid place-items-center">
+                  <img class='w-3/5 mobile:1/5' src="../public/image/service-2.png" width="43" height="35" loading="lazy" alt="Service icon">
+                </div>
+
+                <div>
+                  <h3 class="text-3xl flex mobile:text-2xl">Pagamento Fácil</h3>
+
+                  <p class="card-text">
+                    Pagamento <span class='text-red-600'>100%</span> seguro
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="w-1/4 mobile:w-full">
+              <div class="flex items-center gap-4">
+
+                <div class="bg-white min-w-16 h-16 rounded-full grid place-items-center">
+                  <img class='w-3/5' src="../public/image/service-3.png" width="40" height="40" loading="lazy" alt="Service icon">
+                </div>
+
+                <div>
+                  <h3 class="text-3xl flex mobile:text-2xl">Devolução Free</h3>
+
+                  <p class="card-text">
+                    Dinheiro de volta em <span class='text-red-600'>30 dias</span>
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="w-1/4 mobile:w-full">
+              <div class="flex items-center gap-4">
+
+                <div class="bg-white min-w-16 h-16 rounded-full grid place-items-center">
+                  <img class='w-3/5' src="../public/image/service-4.png" width="40" height="40" loading="lazy" alt="Service icon">
+                </div>
+
+                <div>
+                  <h3 class="text-3xl flex mobile:text-2xl">Suporte 24/7</h3>
+
+                  <p class="card-text">
+                    Fale com o <span class='text-blue-600'>Suporte</span>
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- <:----------------#INSTA POST-------------:> -->
+
+      <section class="h-2/4 py-10 mobile:hidden">
+
+        <div class='h-full w-full'>
+          <ul class="flex w-full flex-1">
+            <li class="relative min-w-1/3 aspect-square group/insta">
+              <img src="../public/image/insta-1.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
+                  class="w-full h-full object-contain object-center group-hover/insta:opacity-10">
+              <a href="#" class="absolute inset-0 grid place-items-center">
+                  <ion-icon class='text-4xl text-white opacity-0 group-hover/insta:opacity-100 transition-opacity duration-300' name="logo-instagram"></ion-icon>
+              </a>
+          </li>
+
+            <li class="relative min-w-1/3 aspect-square group/insta">
+              <img src="../public/image/insta-2.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
+                class="w-full h-full object-contain object-center group-hover/insta:opacity-10">
+              <a href="#" class="absolute inset-0 grid place-items-center ">
+                <ion-icon class='text-4xl text-white opacity-0 group-hover/insta:opacity-100 transition-opacity duration-300' name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="relative min-w-1/3 aspect-square group/insta">
+              <img src="../public/image/insta-3.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
+                class="w-full h-full object-contain object-center group-hover/insta:opacity-10">
+              <a href="#" class="absolute inset-0 grid place-items-center opacity-0 group-hover/insta:opacity-100">
+                <ion-icon class='text-4xl text-white opacity-0 group-hover/insta:opacity-100 transition-opacity duration-300' name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="relative min-w-1/3 aspect-square group/insta">
+              <img src="../public/image/insta-4.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
+                class="w-full h-full object-contain object-center group-hover/insta:opacity-10">
+              <a href="#" class="absolute inset-0 grid place-items-center">
+                <ion-icon class='text-4xl text-white opacity-0 group-hover/insta:opacity-100 transition-opacity duration-300' name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="relative min-w-1/3 aspect-square group/insta">
+              <img src="../public/image/insta-5.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
+                class="w-full h-full object-contain object-center group-hover/insta:opacity-10">
+              <a href="#" class="absolute inset-0 grid place-items-center">
+                <ion-icon class='text-4xl text-white opacity-0 group-hover/insta:opacity-100 transition-opacity duration-300' name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="relative min-w-1/3 aspect-square group/insta">
+              <img src="../public/image/insta-6.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
+                class="w-full h-full object-contain object-center group-hover/insta:opacity-10">
+              <a href="#" class="absolute inset-0 grid place-items-center">
+                <ion-icon class='text-4xl text-white opacity-0 group-hover/insta:opacity-100 transition-opacity duration-300' name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="relative min-w-1/3 aspect-square group/insta">
+              <img src="../public/image/insta-7.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
+                class="w-full h-full object-contain object-center group-hover/insta:opacity-10">
+              <a href="#" class="absolute inset-0 grid place-items-center">
+                <ion-icon class='text-4xl text-white opacity-0 group-hover/insta:opacity-100 transition-opacity duration-300' name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="relative min-w-1/3 aspect-square group/insta">
+              <img src="../public/image/insta-8.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
+                class="w-full h-full object-contain object-center group-hover/insta:opacity-10">
+              <a href="#" class="absolute inset-0 grid place-items-center">
+                <ion-icon class='text-4xl text-white opacity-0 group-hover/insta:opacity-100 transition-opacity duration-300' name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class='w-full h-40 flex justify-center items-center py-20 mt-5'>
+          <img class='w-24 h-24 rounded-full' src="../public/image/Logo-Fundo.png" alt="">
+            <p class='font-bold text-white text-2xl'>SPORT <span class='text-blue-500'>TIPS &copy</span></p>
+        </div>
+      </section>
+
+      <!-- ------------------------ Footer -------------------- -->
+
+      <footer class="h-full mt-10 font-robo bg-zinc-950">
+
+        <div class="px-4 py-10">
+          <div class="">
+    
+            <div class="flex justify-between pb-3 border-b mb-12 bg-Banner-Players bg-no-repeat bg-top mobile:bg-bottom">
+    
+              <a href="#" class="logo">
+                <img class='w-24 h-24 rounded-full' src="../public/image/Logo-Fundo.png" alt="">
+            <p class='font-bold text-white text-2xl'>SPORT <span class='text-blue-500'>TIPS &copy</span></p>
+              </a>
+    
+              <ul class="flex items-end gap-2 mobile:gap-1">
+    
+                <li>
+                  <a href="#" class="text-white text-xl p-3 hover:text-blue-700">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="text-white text-xl p-3 hover:text-blue-700">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="text-white text-xl p-3 hover:text-blue-700">
+                    <ion-icon name="logo-pinterest"></ion-icon>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="text-white text-xl p-3 hover:text-blue-700">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+    
+              </ul>
+    
+            </div>
+    
+            <div class="grid grid-cols-4 mobile:grid-cols-1">
+    
+              <ul class="mobile:w-full mobile:text-center">
+    
+                <li>
+                  <p class="relative text-white font-jose text-lg mb-5 after:content-[] after:block after:w-12 after:h-1 after:mt-2">Contato</p>
+                </li>
+    
+                <li>
+                  <address class="text-white opacity-65 flex items-center gap-2 py-1">
+                    <ion-icon name="location"></ion-icon>
+    
+                    <span class="footer-link-text hover:text-blue-700 hover:underline">
+                      Nova Alvorada do Sul, MS
+                    </span>
+                  </address>
+                </li>
+    
+                <li>
+                  <a href="tel:+557343673257" class="text-white opacity-65 flex items-center gap-2">
+                    <ion-icon name="call"></ion-icon>
+    
+                    <span class="footer-link-text hover:text-blue-700 hover:underline">+55 67 99999-9999</span>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="mailto:footcap@help.com" class="text-white opacity-65 flex items-center gap-2 py-1">
+                    <ion-icon name="mail"></ion-icon>
+    
+                    <span class="footer-link-text hover:text-blue-700 hover:underline">sport.tips@help.com</span>
+                  </a>
+                </li>
+    
+              </ul>
+    
+              <ul class="mobile:mt-10">
+    
+                <li>
+                  <p class="relative text-white font-jose text-lg mb-5 after:content-[] mobile:w-full mobile:text-center">Minha Conta</p>
+                </li>
+    
+                <li>
+                  <a href="#" class="text-white opacity-65 flex items-center gap-2 py-1">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+    
+                    <span class="footer-link-text hover:text-blue-600 hover:underline">Minha Conta</span>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="text-white opacity-65 flex items-center gap-2 py-1">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+    
+                    <span class="footer-link-text hover:text-blue-600 hover:underline">Ver Carrinho</span>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="text-white opacity-65 flex items-center gap-2 py-1">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+    
+                    <span class="footer-link-text hover:text-blue-600 hover:underline">Favoritos</span>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="text-white opacity-65 flex items-center gap-2 py-1">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+    
+                    <span class="flex-1 hover:text-blue-600 hover:underline">Compare</span>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="text-white opacity-65 flex items-center gap-2 py-1">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+    
+                    <span class="flex-1 hover:text-blue-600 hover:underline">Novos Produtos</span>
+                  </a>
+                </li>
+    
+              </ul>
+    
+              <div class="mobile:hidden">
+    
+                <p class="relative text-white font-jose text-lg mb-5 after:content-[]">Horário de Funcionamento</p>
+    
+                <table class="footer-table">
+                  <tbody>
+    
+                    <tr class="flex py-1 text-white gap-2">
+                      <th class="text-blue-500" scope="row">Mon - Tue:</th>
+    
+                      <td class="font-robo opacity-65">8AM - 10PM</td>
+                    </tr>
+    
+                    <tr class="flex py-1 text-white gap-2">
+                      <th class="text-blue-500" scope="row">Wed:</th>
+    
+                      <td class="font-robo opacity-65">8AM - 7PM</td>
+                    </tr>
+    
+                    <tr class="flex py-1 text-white gap-2">
+                      <th class="text-blue-500" scope="row">Fri:</th>
+    
+                      <td class="font-robo opacity-65">7AM - 12PM</td>
+                    </tr>
+    
+                    <tr class="flex py-1 text-white gap-2">
+                      <th class="text-blue-500" scope="row">Sat:</th>
+    
+                      <td class="font-robo opacity-65">9AM - 8PM</td>
+                    </tr>
+    
+                    <tr class="flex py-1 text-white gap-2">
+                      <th class="text-blue-500" scope="row">Sun:</th>
+    
+                      <td class="font-robo opacity-65">Closed</td>
+                    </tr>
+    
+                  </tbody>
+                </table>
+    
+              </div>
+    
+              <div class="mobile:mt-10">
+    
+                <p class="relative text-white font-jose text-lg mb-5 after:content-[] mobile:w-full mobile:text-center">Suporte</p>
+    
+                <p class="text-white opacity-65 mb-3">
+                  Entre em contato em caso de erros, bug, pagamentos, duvidas e etc.
+                </p>
+    
+                <form action="" class="flex gap-2 mt-2">
+                  <input type="email" name="email" required placeholder="Email" class="border-2 border-blue-600 outline-none bg-transparent px-2">
+    
+                  <button type="submit" class="bg-blue-800 px-2 w-32 py-1 text-white hover:shadow-md hover:shadow-blue-600 rounded-md">Subscribe</button>
+                </form>
+    
+              </div>
+    
+            </div>
+    
+          </div>
+        </div>
+    
+        <div class="w-full mt-4 mobile:mt-0">
+          <div class="w-full flex justify-center text-white bg-slate-900 py-4">
+    
+            <p class="copyright font-jose mobile:text-xs">
+              &copy; 2023 <a href="#" class="text-red-600 font-robo">Webster Dev</a> | Todos os Direitos Reservados
+            </p>
+    
+          </div>
+        </div>
+    
+      </footer>
+
+    </article>
+</main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js">
+    </script>  
+
+    <script src="carrosel.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
