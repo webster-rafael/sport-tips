@@ -29,7 +29,7 @@ module.exports = {
       },
 
       backgroundImage: {
-        'Banner': "url('./public/image/Banner.png')",
+        'Banner': "url('../public/image/Banner.png')",
         'Banner-Players': "url('../public/image/Banner-Players.png')",
         'Banner-Mobile': "url('../public/image/chuteiras3.jpg')",
       },
