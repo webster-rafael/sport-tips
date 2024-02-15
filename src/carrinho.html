@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./output.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./image/Logo.jpg" type="image/jpg">
+    <script src="carrinho.js" async></script>
+
+    <title>Carrinho</title>
+</head>
+<body class='h-screen bg-slate-900'>
+    <header class='fixed w-full flex justify-between bg-zinc-950 text-white z-10 font-robo px-4 mobile:px-2'>
+        <div class='flex items-center gap-1 hover:transition-transform transform hover:scale-110'>
+            <img class='size-16 rounded-full' src="./image/Logo-Fundo.png" alt="">
+            <p class='font-bold'>SPORT <span class='text-blue-500'>TIPS</span></p>
+        </div>
+        <nav class='flex justify-center items-center mobile:hidden'>
+            <ul class="flex gap-4">
+                <li>
+                    <a href="#" class="nav-link hover:border-b-2 hover:border-blue-500 hover:text-blue-100">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link hover:border-b-2 hover:border-blue-500 hover:text-blue-100">Sobre</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link hover:border-b-2 hover:border-blue-500 hover:text-blue-100">Products</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link hover:border-b-2 hover:border-blue-500 hover:text-blue-100">Loja</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link hover:border-b-2 hover:border-blue-500 hover:text-blue-100">Contato</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- --------------- menu mobile --------------- -->
+
+        <div class='flex flex-1 justify-end desktop:hidden'>
+          <span class="text-3xl cursor-pointer mx-2 md:hidden block my-auto">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+          </span>
+        </div>
+
+        <!-- -------------- fim menu mobile -------------- -->
+        
+        <div class='flex items-center'>
+            <ul id='lista' class="flex items-center mobile:z-[-1] z-auto static mobile:absolute mobile:w-full mobile:left-0 w-auto py-0 mobile:py-4 pl-0 mobile:pl-7 opacity-100 mobile:opacity-0 mobile:top-[-400px] transition-all ease-in duration-500 gap-4">
+                <li class='flex'>
+                  <button class="flex items-center gap-1 hover:transition-transform transform hover:scale-110">
+                    <ion-icon class='text-blue-600' name="search-outline" aria-hidden="true"></ion-icon>
+      
+                    <span class="">Procurar</span>
+                  </button>
+                </li>
+      
+                <li>
+                  <button class="flex items-center gap-1 hover:transition-transform transform hover:scale-110">
+                    <ion-icon class='text-red-700 group-hover/fav:transition-transform transform hover:scale-110' name="heart-outline" aria-hidden="true"></ion-icon>
+      
+                    <span class="nav-action-text group/fav hover:transition-transform transform hover:scale-110">Favoritos</span>
+      
+                    <data class="text-xs rounded-full px-[4px] absolute z-1 -top-1 right-[-0.7rem] bg-red-600" value="5" aria-hidden="true">5</data>
+                  </button>
+                </li>
+      
+                <li>
+                  <button class="flex items-center gap-1 hover:transition-transform transform hover:scale-110">
+                    <ion-icon class='text-yellow-300' name="bag-outline" aria-hidden="true"></ion-icon>
+                    Carrinho
+                  </button>
+                </li>
+      
+              </ul>
+        </div>
+    </header>
+
+    <section class=" h-screen px-4 font-robo">
+        <div class='flex flex-col h-screen items-start justify-center text-white'>
+            <h2 class="text-3xl text-center uppercase mb-6 font-jose">Carrinho</h2>
+            <table class="text-start border pb-1 uppercase cart-table">
+              <thead>
+                <tr>
+                  <th class="text-start border pb-1 pl-1 uppercase first-col">Item</th>
+                  <th class="text-start border pb-1 pl-1 uppercase w-[26%]">Preço</th>
+                  <th class="text-start border pb-1 pl-1 uppercase w-[26%]">Quantidade</th>
+                </tr>
+              </thead>
+              <tbody class='tabela'>
+                 <!-- <tr class="cart-product">
+                  <td class="flex items-center product-identification">
+                    <img src="./image/collection-1.jpg" alt="Miniatura" class="w-[120px] h-[70px] cart-product-image">
+                    <strong class="ml-4 text-xs cart-product-title">Miniatura</strong>
+                  </td>
+                  <td>
+                    <span class="cart-product-price">R$69,90</span>
+                  </td>
+                  <td>
+                    <input type="number" value="2" min="0" class="w-12 h-7 rounded-md border-2 border-blue-700 text-center text-black font-semibold product-qtd-input">
+                    <button type="button" name='buttonRemove' class="ml-3 rounded-md bg-red-700 py-1 px-2 mr-1 hover:bg-red-800 remove-product-button">Remover</button>
+                  </td>
+                </tr>
+                <tr class="cart-product">
+                  <td class="flex items-center">
+                    <img src="./image/collection-2.jpg" alt="Poster 3" class="w-[120px] h-[70px]">
+                    <strong class="ml-4 text-xs">Poster 3</strong>
+                  </td>
+                  <td>
+                    <span class="cart-product-price">R$19,99</span>
+                  </td>
+                  <td>
+                    <input type="number" value="1" min="0" class="w-12 h-7 rounded-md border-2 border-blue-700 text-center text-black font-semibold product-qtd-input">
+                    <button type="button" name='buttonRemove' class="ml-3 rounded-md bg-red-700 py-1 px-2 mr-1 hover:bg-red-800">Remover</button>
+                  </td>
+                </tr> 
+                -------- -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3" class="border-t text-end pt-1 pr-4 text-lg cart-total-container">
+                    <strong class='mr-3'>Total</strong>
+                    <span>R$0,00</span>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+            <button type="button" class="purchase-button bg-red-700 py-1 px-4 mt-2 rounded-md hover:bg-red-800">Finalizar Compra</button>
+        </div>
+      </section>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const produto = urlParams.get('produto');
+            const preco = urlParams.get('preco');
+
+            if (produto && preco) {
+                console.log(`Produto: ${produto}, Preço: ${preco}`);
+                const listaProdutos = document.getElementById('lista-produtos');
+                const novoProduto = document.createElement('div');
+                novoProduto.textContent = `Produto: ${produto}, Preço: R$ ${preco}`;
+                listaProdutos.appendChild(novoProduto);
+                
+            }
+        });
+    </script>
+</body>
+</html>

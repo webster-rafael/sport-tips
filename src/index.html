@@ -11,7 +11,7 @@
     <link href="./output.css" rel="stylesheet">
 
     <!-- -------- Carrosel Link/Script --------- -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script async src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.1.2/css/ionicons.min.css">
 
@@ -20,11 +20,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <link rel="shortcut icon" href="./image/Logo.jpg" type="image/jpg">
+
     <!-- ------------- Fontes ----------------- -->
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Josefin+Sans:wght@300;500;600;700&family=Montserrat:wght@300;500;700&family=Roboto:ital,wght@0,300;0,500;1,700&display=swap" rel="stylesheet">
 
-<title>Document</title>
+<title>SportTips</title>
 </head>
 <body class='h-screen bg-slate-900 simplebar'>
     <header class='fixed w-full flex justify-between bg-zinc-950 text-white z-10 font-robo px-4 mobile:px-2'>
@@ -85,7 +87,7 @@
                 <li>
                   <button class="flex items-center gap-1 hover:transition-transform transform hover:scale-110">
                     <ion-icon class='text-yellow-300' name="bag-outline" aria-hidden="true"></ion-icon>
-                    Carrinho
+                    <a href="http://127.0.0.1:5500/src/carrinho.html" target='_blank'>Carrinho</a>
                   </button>
                 </li>
       
@@ -209,22 +211,24 @@
       <ul class="grid grid-cols-4 gap-4 py-4 autoplay2">
 
         <li class="product-item group px-4" id='lista-1'>
-          <div class="" tabindex="0">
+          <div class="element-product" tabindex="0">
 
             <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
-              <img class='transition-transform transform hover:scale-110 mobile:w-full' src="./image/product-1.jpg" width="312" height="350" loading="lazy"
-                alt="Running Sneaker Shoes" class="object-contain object-center">
+              <img src="./image/product-1.jpg" width="312" height="350" loading="lazy"
+                alt="Running Sneaker Shoes" class="transition-transform transform hover:scale-110 mobile:w-full product-image">
 
               <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
 
               <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
 
                 <li class="relative group/item flex">
-                  <button class="bg-blue-500 rounded-full size-8 flex justify-center items-center text-white hover:bg-blue-800" aria-labelledby="card-label-1">
+                  <button class="bg-blue-500 rounded-full size-8 flex justify-center items-center text-white hover:bg-blue-800 button-hover-background" aria-labelledby="card-label-1">
                     <ion-icon class='' name="cart-outline"></ion-icon>
                   </button>
 
-                  <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                  <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">
+                    <button class=''>Add ao carrinho</button>
+                  </div>
                 </li>
 
                 <li class="relative group/item flex">
@@ -261,13 +265,19 @@
                 <a href="#" class="font-robo opacity-60 text-sm">Feminino</a>
               </div>
 
-              <h3 class="h3 card-title py-1">
-                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Running Sneaker Shoes
+              <h3 class="py-1">
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">
+                  <p class='product-title'>Leather Mens Slipper</p>
                 </button>
+                <a href="#"></a>
               </h3>
 
               <div class='pt-2'>
-                  <data class="text-yellow-500" value="180.85">R$180.85</data>
+                  <data class="text-yellow-500 productPrice" value="180.85">
+                    <span class='product-price'>
+                      R$180.85
+                    </span>
+                  </data>
               </div>
 
             </div>
@@ -276,22 +286,22 @@
         </li>
 
         <li class="product-item group px-4" id='lista-1'>
-            <div class="" tabindex="0">
+            <div class="element-product" tabindex="0">
   
               <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
-                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="./image/product-2.jpg" width="312" height="350" loading="lazy"
-                  alt="Running Sneaker Shoes" class="object-contain object-center">
+                <img src="./image/product-2.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes" class='transition-transform transform hover:scale-110 mobile:w-full product-image'>
   
                 <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
   
                 <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
   
                   <li class="relative group/item flex">
-                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-1"'>
                       <ion-icon class='' name="cart-outline"></ion-icon>
                     </button>
   
-                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100 button-hover-background" id="card-label-1">Add ao carrinho</div>
                   </li>
   
                   <li class="relative group/item flex">
@@ -329,13 +339,18 @@
                 </div>
 
               <h3 class="py-1">
-                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Leather Mens Slipper
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">
+                  <p class='product-title'>Leather Mens Slipper</p>
                 </button>
                 <a href="#"></a>
               </h3>
 
               <div class='pt-2'>
-                  <data class="text-yellow-500" value="190.85">$190.85</data>
+                  <data class="text-yellow-500" value="190.85">
+                    <span class='product-price'>
+                    R$180.85
+                  </span>
+                </data>
               </div>
 
             </div>
@@ -344,18 +359,18 @@
         </li>
 
         <li class="product-item group px-4" id='lista-1'>
-            <div class="" tabindex="0">
+            <div class="element-product" tabindex="0">
   
               <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
-                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="./image/product-3.jpg" width="312" height="350" loading="lazy"
-                  alt="Running Sneaker Shoes" class="object-contain object-center">
+                <img src="./image/product-3.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes" class='transition-transform transform hover:scale-110 mobile:w-full product-image'>
   
                 <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
   
                 <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
   
                   <li class="relative group/item flex">
-                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-1">
                       <ion-icon class='' name="cart-outline"></ion-icon>
                     </button>
   
@@ -397,12 +412,15 @@
                 </div>
 
               <h3 class="py-1">
-                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Running Sneaker Shoes
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">
+                  <a class='product-title'>Leather Mens Slipper</a>
                 </button>
               </h3>
 
               <div class='pt-2'>
-                  <data class="text-yellow-500" value="160.85">$160.85</data>
+                  <data class="text-yellow-500" value="160.85">
+                    <span class='product-price'>$160.85</span>
+                  </data>
               </div>
 
             </div>
@@ -411,22 +429,22 @@
         </li>
 
         <li class="product-item group px-4" id='lista-1'>
-            <div class="" tabindex="0">
+            <div class="element-product" tabindex="0">
   
               <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
-                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="./image/product-4.jpg" width="312" height="350" loading="lazy"
-                  alt="Running Sneaker Shoes" class="object-contain object-center">
+                <img class='transition-transform transform hover:scale-110 mobile:w-full product-image' src="./image/product-4.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes">
   
                 <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
   
                 <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
   
                   <li class="relative group/item flex">
-                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-1">
                       <ion-icon class='' name="cart-outline"></ion-icon>
                     </button>
   
-                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100 button-hover-background" id="card-label-1">Add ao carrinho</div>
                   </li>
   
                   <li class="relative group/item flex">
@@ -464,11 +482,15 @@
                 </div>
 
               <h3 class="py-1">
-                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800'>Air Jordan 7 Retro</button>
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800'>
+                  <p class='product-title'>Air Jordan 7 Retro</p>
+                </button>
               </h3>
 
               <div class='pt-2'>
-                  <data class="text-yellow-500" value="170.85">R$170.85 <del>R$200.21</del>
+                  <data class="text-yellow-500" value="170.85">
+                    <span class='product-price'>R$170.85</span> 
+                    <del>R$200.21</del>
                   </data>
               </div>
 
@@ -478,22 +500,22 @@
         </li>
 
         <li class="product-item group px-4 " id='lista-1'>
-            <div class="" tabindex="0">
+            <div class="element-product" tabindex="0">
   
               <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
-                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="./image/product-5.jpg" width="312" height="350" loading="lazy"
-                  alt="Running Sneaker Shoes" class="object-contain object-center">
+                <img class='transition-transform transform hover:scale-110 mobile:w-full product-image' src="./image/product-5.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes">
   
                 <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
   
                 <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
   
                   <li class="relative group/item flex">
-                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-1">
                       <ion-icon class='' name="cart-outline"></ion-icon>
                     </button>
   
-                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100 button-hover-background" id="card-label-1">Add ao carrinho</div>
                   </li>
   
                   <li class="relative group/item flex">
@@ -530,12 +552,15 @@
                     <a href="#" class="font-robo opacity-60 text-sm">Feminino</a>
                 </div>
               <h3 class="py-1">
-                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Running Sneaker Shoes
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">
+                  <span class='product-title'>Leather Mens Slipper</span>
                 </button>
               </h3>
 
               <div class='pt-2'>
-                  <data class="text-yellow-500" value="120.85">R$120.85</data>
+                  <data class="text-yellow-500" value="120.85">
+                    <span class='product-price'>R$120.85</span>
+                  </data>
               </div>
 
             </div>
@@ -544,18 +569,18 @@
         </li>
 
         <li class="product-item group px-4" id='lista-1'>
-            <div class="" tabindex="0">
+            <div class="element-product" tabindex="0">
   
               <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
-                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="./image/product-6.jpg" width="312" height="350" loading="lazy"
-                  alt="Running Sneaker Shoes" class="object-contain object-center">
+                <img class='transition-transform transform hover:scale-110 mobile:w-full product-image' src="./image/product-6.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes">
   
                 <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
   
                 <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
   
                   <li class="relative group/item flex">
-                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-1">
                       <ion-icon class='' name="cart-outline"></ion-icon>
                     </button>
   
@@ -597,12 +622,15 @@
                 </div>
 
               <h3 class="py-1">
-                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Adidas Sneakers Shoes
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">
+                  <span class='product-title'>Adidas Sneakers Shoes</span>
                 </button>
               </h3>
 
               <div class='pt-2'>
-                  <data class="text-yellow-500 value="100.85">$100.85</data>
+                  <data class="text-yellow-500 value="100.85">
+                    <span class='product-price'>$100.85</span>
+                  </data>
               </div>
 
             </div>
@@ -611,18 +639,18 @@
         </li>
 
         <li class="product-item group px-4" id='lista-1'>
-            <div class="" tabindex="0">
+            <div class="element-product" tabindex="0">
   
               <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
-                <img class='transition-transform transform hover:scale-110 mobile:w-full' src="./image/product-7.jpg" width="312" height="350" loading="lazy"
-                  alt="Running Sneaker Shoes" class="object-contain object-center">
+                <img class='transition-transform transform hover:scale-110 mobile:w-full product-image' src="./image/product-7.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes">
   
                 <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
   
                 <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
   
                   <li class="relative group/item flex">
-                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-1">
                       <ion-icon class='' name="cart-outline"></ion-icon>
                     </button>
   
@@ -664,12 +692,15 @@
                 </div>
 
               <h3 class="py-1">
-                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Nike Basketball shoes
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">
+                  <p class='product-title'>Nike Basketball shoes</p>
                 </button>
               </h3>
 
               <div class='pt-2'>
-                  <data class="text-yellow-500" value="120.85">$120.85</data>
+                  <data class="text-yellow-500" value="120.85">
+                    <span class='product-price'>$120.85</span>
+                  </data>
               </div>
 
             </div>
@@ -678,26 +709,28 @@
         </li>
 
         <li class="product-item group px-4" id='lista-1'>
-            <div class="" tabindex="0">
+            <div class="element-product" tabindex="0">
   
               <figure class="relative bg-blue-600 overflow-hidden rounded-t-lg">
-                <img class='transition-transform hover:scale-110 mobile:w-full' src="./image/product-8.jpg" width="312" height="350" loading="lazy"
-                  alt="Running Sneaker Shoes" class="object-contain object-center">
+                <img class='transition-transform hover:scale-110 mobile:w-full product-image' src="./image/product-8.jpg" width="312" height="350" loading="lazy"
+                  alt="Running Sneaker Shoes">
   
                 <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
   
                 <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
   
                   <li class="relative group/item flex">
-                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                    <button class="bg-blue-500 rounded-full size-8 flex justify-center items-center text-white hover:bg-blue-800 button-hover-background" aria-labelledby="card-label-1">
                       <ion-icon class='' name="cart-outline"></ion-icon>
                     </button>
   
-                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">Add ao carrinho</div>
+                    <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-1">
+                      <button class=''>Add ao carrinho</button>
+                    </div>
                   </li>
   
                   <li class="relative group/item flex">
-                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-2">
+                    <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-2">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
   
@@ -731,12 +764,15 @@
                 </div>
 
               <h3 class="py-1">
-                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800' href="#">Simple Fabric Shoe
+                <button class='bg-transparent border-2 border-blue-800 w-5/6 py-1.5 rounded-sm hover:bg-blue-950 shadow-lg shadow-blue-900 hover:shadow-blue-800 button-hover-background' href="#">
+                  <span class='product-title'>Simple Fabric Shoe</span>
                 </button>
               </h3>
 
-              <div class='pt-2'>
-                  <data class="text-yellow-500" value="100.85">$100.85</data>
+                  <data class="text-yellow-500" value="100.85">
+                    <span class='product-price'>
+                      R$100.85
+                    </span>
               </div>
             </div>
           </div>
@@ -815,16 +851,16 @@
               <li class="flex group px-4">
                 <div class="mobile:h-full" tabindex="0">
 
-                  <figure class="relative bg-blue-600 overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3">
+                  <figure class="relative bg-transparent overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3 element-product" id='prod-1'>
                     <img src="./image/product-1.jpg" width="312" height="350" loading="lazy"
-                      alt="Running Sneaker Shoes" class="transition-transform transform hover:scale-110">
+                      alt="Running Sneaker Shoes" class="transition-transform transform hover:scale-110 product-image">
 
                     <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
 
                     <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
 
                       <li class="relative group/item flex">
-                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-1" id='buttonAdd'>
                           <ion-icon name="cart-outline"></ion-icon>
                         </button>
 
@@ -856,7 +892,7 @@
                       </li>
 
                     </ul>
-                  </figure>
+                  
 
                   <div class="pb-5">
 
@@ -866,12 +902,17 @@
                     </div>
 
                     <h3 class="h3 card-title">
-                      <a href="#">Running Sneaker Shoes</a>
+                      <a class='product-title' href="#">Running Sneaker Shoes</a>
                     </h3>
 
-                    <data class="card-price" value="180.85">R$180.85</data>
+                    <data class="card-price" value="180.85">
+                      <span class='product-price'>
+                        R$180.85
+                      </span>
+                    </data>
 
                   </div>
+                </figure>
 
                 </div>
               </li>
@@ -879,14 +920,14 @@
               <li class="flex group px-4">
                 <div class="product-card" tabindex="0">
 
-                  <figure class="relative bg-blue-600 overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3">
+                  <figure class="relative bg-transparent overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3 element-product" id='prod-2'>
                     <img src="./image/product-2.jpg" width="312" height="350" loading="lazy"
-                      alt="Leather Mens Slipper" class="transition-transform transform hover:scale-110">
+                      alt="Leather Mens Slipper" class="transition-transform transform hover:scale-110 product-image">
 
                     <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
 
                       <li class="relative group/item flex">
-                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-1" id='buttonAdd'>
                           <ion-icon name="cart-outline"></ion-icon>
                         </button>
 
@@ -918,8 +959,6 @@
                       </li>
 
                     </ul>
-                  </figure>
-
                   <div class="card-content">
 
                     <div class="card-cat">
@@ -928,29 +967,30 @@
                     </div>
 
                     <h3 class="h3 card-title">
-                      <a href="#">Leather Mens Slipper</a>
+                      <a class='product-title' href="#">Leather Mens Slipper</a>
                     </h3>
 
-                    <data class="card-price" value="190.85">R$190.85</data>
-
+                    <data class="card-price" value="190.85">
+                      <span class='product-price'>R$190.85</span>
+                    </data>
                   </div>
-
+                </figure>
                 </div>
               </li>
 
               <li class="flex group px-4">
                 <div class="product-card" tabindex="0">
 
-                  <figure class="relative bg-blue-600 overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3">
+                  <figure class="relative bg-transparent overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3 element-product" id='prod-3'>
                     <img src="./image/product-3.jpg" width="312" height="350" loading="lazy"
-                      alt="Simple Fabric Shoe" class="transition-transform transform hover:scale-110">
+                      alt="Simple Fabric Shoe" class="transition-transform transform hover:scale-110 product-image">
 
                     <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl">New</div>
 
                     <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
 
                       <li class="relative group/item flex">
-                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-1" id='buttonAdd'>
                           <ion-icon name="cart-outline"></ion-icon>
                         </button>
 
@@ -980,24 +1020,24 @@
 
                         <div class="flex bg-black text-white text-sm font-robo rounded-md absolute top-2/4 right-9 -translate-y-2/4 w-max opacity-0 pointer-events-none py-1 px-2 ease-in duration-200 group-hover/item:opacity-100" id="card-label-4">Compare</div>
                       </li>
-
                     </ul>
-                  </figure>
-
+  
                   <div class="card-content">
-
                     <div class="card-cat">
                       <a href="#" class="card-cat-link">Homem</a> /
                       <a href="#" class="card-cat-link">Mulher</a>
                     </div>
 
                     <h3 class="h3 card-title">
-                      <a href="#">Simple Fabric Shoe</a>
+                      <a class='product-title' href="#">Simple Fabric Shoe</a>
                     </h3>
 
-                    <data class="card-price" value="160.85">R$160.85</data>
-
+                    <data class="card-price" value="160.85">
+                      <span class='product-price'>R$160.85</span>
+                    </data>
                   </div>
+                </figure>
+                  
 
                 </div>
               </li>
@@ -1005,16 +1045,16 @@
               <li class="flex group px-4">
                 <div class="product-card" tabindex="0">
 
-                  <figure class="relative bg-blue-600 overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3">
+                  <figure key='1' class="relative bg-transparent overflow-hidden rounded-lg shadow-lg shadow-black hover:shadow-blue-700 mb-3 element-product">
                     <img src="./image/product-4.jpg" width="312" height="350" loading="lazy"
-                      alt="Air Jordan 7 Retro " class="transition-transform transform hover:scale-110">
+                      alt="Air Jordan 7 Retro " class="transition-transform transform hover:scale-110 product-image">
 
                     <div class="absolute top-1 left-1 py-1 px-4 bg-red-600 rounded-xl"> -25%</div>
 
                     <ul class="absolute top-[20px] right-[-20px] opacity-0 group-hover:right-[10px] group-hover:opacity-100 ease-in duration-300 text-black flex flex-col gap-2">
 
                       <li class="relative group/item flex">
-                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white" aria-labelledby="card-label-1">
+                        <button class="bg-blue-500 hover:bg-blue-800 rounded-full size-8 flex justify-center items-center text-white button-hover-background" aria-labelledby="card-label-1" id='buttonAdd'>
                           <ion-icon name="cart-outline"></ion-icon>
                         </button>
 
@@ -1046,7 +1086,7 @@
                       </li>
 
                     </ul>
-                  </figure>
+                  
 
                   <div class="card-content">
 
@@ -1056,14 +1096,15 @@
                     </div>
 
                     <h3 class="h3 card-title">
-                      <a href="#">Air Jordan 7 Retro </a>
+                      <a class='product-title' href="#">Air Jordan 7 Retro </a>
                     </h3>
 
-                    <data class="card-price" value="170.85">R$170.85 <del>$200.21</del></data>
-
+                    <data class="card-price" value="170.85">
+                      <span class='product-price'>R$170.85</span>
+                      <del>$200.21</del></data>
                   </div>
-
-                </div>
+                </figure>
+              </div>
               </li>
 
             </ul>
@@ -1240,7 +1281,7 @@
             <div class="flex justify-between pb-3 border-b mb-12 bg-Banner-Players bg-no-repeat bg-top mobile:bg-bottom">
     
               <a href="#" class="logo">
-                <img class='w-24 h-24 rounded-full' src="./image/Logo-Fundo.png" alt="">
+                <img class='w-24 h-24 rounded-full' src="./image/Logo-Fundo.png" alt="Imagem da Logo">
             <p class='font-bold text-white text-2xl'>SPORT <span class='text-blue-500'>TIPS &copy</span></p>
               </a>
     
@@ -1436,12 +1477,55 @@
     </article>
 </main>
 
+<script>
+
+  // Seletor para todos os botões "adicionar ao carrinho"
+const addToCartButtons = document.querySelectorAll(".button-hover-background");
+
+// Itera sobre cada botão e adiciona um ouvinte de evento de clique
+addToCartButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        // Passa o botão clicado como argumento para a função addProductToCart
+        addProductToCart(button);
+    });
+});
+
+// Função para adicionar um produto ao carrinho
+function addProductToCart(button) {
+    const productInfos = button.closest(".element-product");
+    const productImage = productInfos.querySelector(".product-image").src;
+    const productName = productInfos.querySelector(".product-title").innerText;
+    const productPrice = productInfos.querySelector(".product-price").innerText;
+
+    // Crie um objeto com os dados do produto
+    const productData = {
+        image: productImage,
+        name: productName,
+        price: productPrice
+    };
+
+    // Obtenha os produtos já existentes no carrinho do localStorage ou inicialize um novo array
+    let cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
+
+    // Adicione o novo produto ao array de produtos
+    cartProducts.push(productData);
+
+    // Converta o array de produtos em uma string JSON e salve no localStorage
+    localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+}
+  // Limpa os dados do local storage quando a página é recarregada
+  window.addEventListener('beforeunload', function() {
+      localStorage.clear();
+  });
+</script>
+
+
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js">
     </script>  
 
     <script src="carrosel.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
