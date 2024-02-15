@@ -54,14 +54,14 @@ if (savedProductsJSON) {
 
         newCartProduct.innerHTML = `
             <td class="flex items-center product-identification">
-                <img src="${savedProduct.image}" alt="${savedProduct.name}" class="w-[120px] h-[70px] cart-product-image">
+                <img src="${savedProduct.image}" alt="${savedProduct.name}" class="w-[150px] h-[100px] cart-product-image">
                 <strong class="ml-4 text-xs">${savedProduct.name}</strong>
             </td>
             <td>
                 <span class="cart-product-price font-robo font-semibold text-blue-600 ml-4">${savedProduct.price}</span>
             </td>
             <td>
-                <input type="number" value="1" min="0" class="w-12 h-7 rounded-md border-2 border-blue-700 text-center text-black font-semibold product-qtd-input">
+                <input type="number" value="1" min="0" class="w-12 h-7 rounded-md border-2 mobile:m-auto border-blue-700 text-center text-black font-semibold product-qtd-input mobile:flex mobile:justify-end mobile:items-end mobile:text-end mobile:py-1">
                 <button type="button" name='buttonRemove' class="ml-3 rounded-md bg-red-700 py-1 px-2 mr-1 hover:bg-red-800 remove-product-button">Remover</button>
             </td>
         `;

@@ -32,6 +32,7 @@ module.exports = {
         'Banner': "url('./image/Banner.png')",
         'Banner-Players': "url('./image/Banner-Players.png')",
         'Banner-Mobile': "url('./image/chuteiras3.jpg')",
+        'Banner-Escuro': "url('./image/BannerEscuro.jpg')",
       },
     },
   },
